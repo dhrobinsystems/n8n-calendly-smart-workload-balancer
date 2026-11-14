@@ -52,6 +52,8 @@ This balancer keeps its own **fairness ledger** and treats each booking as a rou
 
 ## Architecture
 
+![n8n Workflow Overview](assets/n8n-workflow-overview.png)
+
 ```mermaid
 flowchart TD
     A["Calendly webhook<br/>invitee.created / invitee.canceled<br/>(raw body kept)"] --> B["Verify signature & parse<br/>HMAC-SHA256 over t.body · 180 s replay window<br/>schema validation"]
