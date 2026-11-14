@@ -1,0 +1,470 @@
+{
+  "_meta": {
+    "description": "Mocked Calendly webhooks, rep roster, fairness ledger, and API responses for tests and offline dry runs. All identifiers are dummies (REP_ID_01, USER_ID_01, mock_token_here) and every domain is RFC 2606.",
+    "reference_now": "2026-11-16T13:55:00.000Z",
+    "scenario": "The meeting is Tue 2026-11-17 17:00-17:30 UTC. REP_ID_01 is on PTO that day, REP_ID_04 (Singapore) is outside working hours, REP_ID_02 is near deal capacity (38/40), and REP_ID_03 has headroom (20/50). The ledger entry from 2026-10-15 falls outside the 14-day window."
+  },
+  "roster": [
+    {
+      "id": "REP_ID_01",
+      "name": "Rep One",
+      "email": "rep01@example.com",
+      "hubspotOwnerId": "1001",
+      "timezone": "America/New_York",
+      "regions": [
+        "AMER"
+      ],
+      "weight": 1,
+      "maxActiveDeals": 40,
+      "workingHours": {
+        "start": "09:00",
+        "end": "17:00",
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "ptoCalendarId": "pto-rep01@calendar.example.com",
+      "calendarId": "rep01@example.com",
+      "active": true
+    },
+    {
+      "id": "REP_ID_02",
+      "name": "Rep Two",
+      "email": "rep02@example.com",
+      "hubspotOwnerId": "1002",
+      "timezone": "America/Los_Angeles",
+      "regions": [
+        "AMER"
+      ],
+      "weight": 1,
+      "maxActiveDeals": 40,
+      "workingHours": {
+        "start": "08:00",
+        "end": "16:00",
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "ptoCalendarId": "pto-rep02@calendar.example.com",
+      "calendarId": "rep02@example.com",
+      "active": true
+    },
+    {
+      "id": "REP_ID_03",
+      "name": "Rep Three",
+      "email": "rep03@example.com",
+      "hubspotOwnerId": "1003",
+      "timezone": "Europe/London",
+      "regions": [
+        "EMEA"
+      ],
+      "weight": 1.5,
+      "maxActiveDeals": 50,
+      "workingHours": {
+        "start": "09:00",
+        "end": "17:30",
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "ptoCalendarId": "pto-rep03@calendar.example.com",
+      "calendarId": "rep03@example.com",
+      "active": true
+    },
+    {
+      "id": "REP_ID_04",
+      "name": "Rep Four",
+      "email": "rep04@example.com",
+      "hubspotOwnerId": "1004",
+      "timezone": "Asia/Singapore",
+      "regions": [
+        "APAC"
+      ],
+      "weight": 1,
+      "maxActiveDeals": 35,
+      "workingHours": {
+        "start": "09:00",
+        "end": "18:00",
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "ptoCalendarId": "pto-rep04@calendar.example.com",
+      "calendarId": "rep04@example.com",
+      "active": true
+    }
+  ],
+  "ledger": {
+    "assignments": [
+      {
+        "inviteeUri": "https://api.calendly.example.com/scheduled_events/EVENT_ID/invitees/INVITEE_ID_001",
+        "repId": "REP_ID_01",
+        "assignedAt": "2026-11-07T10:00:00.000Z",
+        "eventStart": "2026-11-08T15:00:00.000Z",
+        "status": "assigned"
+      },
+      {
+        "inviteeUri": "https://api.calendly.example.com/scheduled_events/EVENT_ID/invitees/INVITEE_ID_002",
+        "repId": "REP_ID_01",
+        "assignedAt": "2026-11-11T10:00:00.000Z",
+        "eventStart": "2026-11-12T15:00:00.000Z",
+        "status": "assigned"
+      },
+      {
+        "inviteeUri": "https://api.calendly.example.com/scheduled_events/EVENT_ID/invitees/INVITEE_ID_003",
+        "repId": "REP_ID_02",
+        "assignedAt": "2026-11-08T10:00:00.000Z",
+        "eventStart": "2026-11-09T15:00:00.000Z",
+        "status": "assigned"
+      },
+      {
+        "inviteeUri": "https://api.calendly.example.com/scheduled_events/EVENT_ID/invitees/INVITEE_ID_104",
+        "repId": "REP_ID_02",
+        "assignedAt": "2026-11-14T10:00:00.000Z",
+        "eventStart": "2026-11-15T15:00:00.000Z",
+        "status": "assigned"
+      },
+      {
+        "inviteeUri": "https://api.calendly.example.com/scheduled_events/EVENT_ID/invitees/INVITEE_ID_005",
+        "repId": "REP_ID_03",
+        "assignedAt": "2026-11-09T10:00:00.000Z",
+        "eventStart": "2026-11-10T15:00:00.000Z",
+        "status": "assigned"
+      },
+      {
+        "inviteeUri": "https://api.calendly.example.com/scheduled_events/EVENT_ID/invitees/INVITEE_ID_006",
+        "repId": "REP_ID_03",
+        "assignedAt": "2026-11-12T10:00:00.000Z",
+        "eventStart": "2026-11-13T15:00:00.000Z",
+        "status": "assigned"
+      },
+      {
+        "inviteeUri": "https://api.calendly.example.com/scheduled_events/EVENT_ID/invitees/INVITEE_ID_107",
+        "repId": "REP_ID_03",
+        "assignedAt": "2026-11-15T10:00:00.000Z",
+        "eventStart": "2026-11-16T15:00:00.000Z",
+        "status": "assigned"
+      },
+      {
+        "inviteeUri": "https://api.calendly.example.com/scheduled_events/EVENT_ID/invitees/INVITEE_ID_000",
+        "repId": "REP_ID_04",
+        "assignedAt": "2026-10-15T10:00:00.000Z",
+        "eventStart": "2026-10-16T10:00:00.000Z",
+        "status": "assigned"
+      }
+    ]
+  },
+  "webhooks": [
+    {
+      "label": "new-invitee-round-robin",
+      "expected_status": "dry_run",
+      "expected_rep": "REP_ID_03",
+      "body": {
+        "event": "invitee.created",
+        "created_at": "2026-11-16T13:54:30.000000Z",
+        "created_by": "https://api.calendly.example.com/users/USER_ID_01",
+        "payload": {
+          "uri": "https://api.calendly.example.com/scheduled_events/EVENT_ID/invitees/INVITEE_ID_101",
+          "email": "new.buyer@example.org",
+          "name": "Jordan Buyer",
+          "timezone": "America/Chicago",
+          "status": "active",
+          "event": "https://api.calendly.example.com/scheduled_events/EVENT_ID_101",
+          "rescheduled": false,
+          "cancel_url": "https://calendly.example.com/cancellations/mock_token_here",
+          "reschedule_url": "https://calendly.example.com/reschedulings/mock_token_here",
+          "questions_and_answers": [
+            {
+              "question": "Company size",
+              "answer": "51-200"
+            }
+          ],
+          "tracking": {
+            "utm_source": null,
+            "utm_medium": null,
+            "utm_campaign": null
+          },
+          "scheduled_event": {
+            "uri": "https://api.calendly.example.com/scheduled_events/EVENT_ID_101",
+            "name": "Discovery Call",
+            "start_time": "2026-11-17T17:00:00.000000Z",
+            "end_time": "2026-11-17T17:30:00.000000Z",
+            "event_type": "https://api.calendly.example.com/event_types/EVENT_TYPE_ID_01",
+            "location": {
+              "type": "zoom",
+              "join_url": "https://meet.example.com/mock-room-101"
+            },
+            "event_memberships": [
+              {
+                "user": "https://api.calendly.example.com/users/USER_ID_01",
+                "user_email": "intake@example.com",
+                "user_name": "Intake Host"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "label": "existing-owner-routing",
+      "expected_status": "dry_run",
+      "expected_rep": "REP_ID_02",
+      "body": {
+        "event": "invitee.created",
+        "created_at": "2026-11-16T13:54:30.000000Z",
+        "created_by": "https://api.calendly.example.com/users/USER_ID_01",
+        "payload": {
+          "uri": "https://api.calendly.example.com/scheduled_events/EVENT_ID/invitees/INVITEE_ID_102",
+          "email": "owned.buyer@example.org",
+          "name": "Casey Owned",
+          "timezone": "America/Denver",
+          "status": "active",
+          "event": "https://api.calendly.example.com/scheduled_events/EVENT_ID_102",
+          "rescheduled": false,
+          "cancel_url": "https://calendly.example.com/cancellations/mock_token_here",
+          "reschedule_url": "https://calendly.example.com/reschedulings/mock_token_here",
+          "questions_and_answers": [
+            {
+              "question": "Company size",
+              "answer": "51-200"
+            }
+          ],
+          "tracking": {
+            "utm_source": null,
+            "utm_medium": null,
+            "utm_campaign": null
+          },
+          "scheduled_event": {
+            "uri": "https://api.calendly.example.com/scheduled_events/EVENT_ID_102",
+            "name": "Discovery Call",
+            "start_time": "2026-11-17T17:00:00.000000Z",
+            "end_time": "2026-11-17T17:30:00.000000Z",
+            "event_type": "https://api.calendly.example.com/event_types/EVENT_TYPE_ID_01",
+            "location": {
+              "type": "zoom",
+              "join_url": "https://meet.example.com/mock-room-102"
+            },
+            "event_memberships": [
+              {
+                "user": "https://api.calendly.example.com/users/USER_ID_01",
+                "user_email": "rep01@example.com",
+                "user_name": "Intake Host"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "label": "cancellation-releases-ledger",
+      "expected_status": "released",
+      "body": {
+        "event": "invitee.canceled",
+        "created_at": "2026-11-16T13:54:30.000000Z",
+        "created_by": "https://api.calendly.example.com/users/USER_ID_01",
+        "payload": {
+          "uri": "https://api.calendly.example.com/scheduled_events/EVENT_ID/invitees/INVITEE_ID_107",
+          "email": "cancel.buyer@example.org",
+          "name": "Riley Cancel",
+          "timezone": "Europe/Berlin",
+          "status": "canceled",
+          "event": "https://api.calendly.example.com/scheduled_events/EVENT_ID_107",
+          "rescheduled": false,
+          "cancel_url": "https://calendly.example.com/cancellations/mock_token_here",
+          "reschedule_url": "https://calendly.example.com/reschedulings/mock_token_here",
+          "questions_and_answers": [
+            {
+              "question": "Company size",
+              "answer": "51-200"
+            }
+          ],
+          "tracking": {
+            "utm_source": null,
+            "utm_medium": null,
+            "utm_campaign": null
+          },
+          "scheduled_event": {
+            "uri": "https://api.calendly.example.com/scheduled_events/EVENT_ID_107",
+            "name": "Discovery Call",
+            "start_time": "2026-11-17T17:00:00.000000Z",
+            "end_time": "2026-11-17T17:30:00.000000Z",
+            "event_type": "https://api.calendly.example.com/event_types/EVENT_TYPE_ID_01",
+            "location": {
+              "type": "zoom",
+              "join_url": "https://meet.example.com/mock-room-107"
+            },
+            "event_memberships": [
+              {
+                "user": "https://api.calendly.example.com/users/USER_ID_01",
+                "user_email": "rep03@example.com",
+                "user_name": "Intake Host"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "label": "duplicate-delivery",
+      "expected_status": "duplicate",
+      "body": {
+        "event": "invitee.created",
+        "created_at": "2026-11-16T13:54:30.000000Z",
+        "created_by": "https://api.calendly.example.com/users/USER_ID_01",
+        "payload": {
+          "uri": "https://api.calendly.example.com/scheduled_events/EVENT_ID/invitees/INVITEE_ID_104",
+          "email": "dup.buyer@example.org",
+          "name": "Morgan Dup",
+          "timezone": "America/New_York",
+          "status": "active",
+          "event": "https://api.calendly.example.com/scheduled_events/EVENT_ID_104",
+          "rescheduled": false,
+          "cancel_url": "https://calendly.example.com/cancellations/mock_token_here",
+          "reschedule_url": "https://calendly.example.com/reschedulings/mock_token_here",
+          "questions_and_answers": [
+            {
+              "question": "Company size",
+              "answer": "51-200"
+            }
+          ],
+          "tracking": {
+            "utm_source": null,
+            "utm_medium": null,
+            "utm_campaign": null
+          },
+          "scheduled_event": {
+            "uri": "https://api.calendly.example.com/scheduled_events/EVENT_ID_104",
+            "name": "Discovery Call",
+            "start_time": "2026-11-17T17:00:00.000000Z",
+            "end_time": "2026-11-17T17:30:00.000000Z",
+            "event_type": "https://api.calendly.example.com/event_types/EVENT_TYPE_ID_01",
+            "location": {
+              "type": "zoom",
+              "join_url": "https://meet.example.com/mock-room-104"
+            },
+            "event_memberships": [
+              {
+                "user": "https://api.calendly.example.com/users/USER_ID_01",
+                "user_email": "rep02@example.com",
+                "user_name": "Intake Host"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "label": "invalid-missing-email",
+      "expected_status": "rejected",
+      "body": {
+        "event": "invitee.created",
+        "created_at": "2026-11-16T13:54:30.000000Z",
+        "created_by": "https://api.calendly.example.com/users/USER_ID_01",
+        "payload": {
+          "uri": "https://api.calendly.example.com/scheduled_events/EVENT_ID/invitees/INVITEE_ID_105",
+          "email": "",
+          "name": "No Email",
+          "timezone": "America/New_York",
+          "status": "active",
+          "event": "https://api.calendly.example.com/scheduled_events/EVENT_ID_105",
+          "rescheduled": false,
+          "cancel_url": "https://calendly.example.com/cancellations/mock_token_here",
+          "reschedule_url": "https://calendly.example.com/reschedulings/mock_token_here",
+          "questions_and_answers": [
+            {
+              "question": "Company size",
+              "answer": "51-200"
+            }
+          ],
+          "tracking": {
+            "utm_source": null,
+            "utm_medium": null,
+            "utm_campaign": null
+          },
+          "scheduled_event": {
+            "uri": "https://api.calendly.example.com/scheduled_events/EVENT_ID_105",
+            "name": "Discovery Call",
+            "start_time": "2026-11-17T17:00:00.000000Z",
+            "end_time": "2026-11-17T17:30:00.000000Z",
+            "event_type": "https://api.calendly.example.com/event_types/EVENT_TYPE_ID_01",
+            "location": {
+              "type": "zoom",
+              "join_url": "https://meet.example.com/mock-room-105"
+            },
+            "event_memberships": []
+          }
+        }
+      }
+    }
+  ],
+  "mock_responses": {
+    "account": {
+      "statusCode": 200,
+      "body": {
+        "portalId": 1001,
+        "accountType": "DEVELOPER_TEST",
+        "timeZone": "UTC"
+      }
+    },
+    "contacts": {
+      "owned.buyer@example.org": {
+        "id": "5001",
+        "properties": {
+          "email": "owned.buyer@example.org",
+          "hubspot_owner_id": "1002",
+          "firstname": "Casey",
+          "lastname": "Owned"
+        }
+      }
+    },
+    "open_deals_by_owner": {
+      "1001": 12,
+      "1002": 38,
+      "1003": 20,
+      "1004": 5
+    },
+    "freebusy": {
+      "statusCode": 200,
+      "body": {
+        "kind": "calendar#freeBusy",
+        "timeMin": "2026-11-17T17:00:00.000Z",
+        "timeMax": "2026-11-17T17:30:00.000Z",
+        "calendars": {
+          "pto-rep01@calendar.example.com": {
+            "busy": [
+              {
+                "start": "2026-11-17T05:00:00Z",
+                "end": "2026-11-18T05:00:00Z"
+              }
+            ]
+          },
+          "pto-rep02@calendar.example.com": {
+            "busy": []
+          },
+          "pto-rep03@calendar.example.com": {
+            "busy": []
+          },
+          "pto-rep04@calendar.example.com": {
+            "busy": []
+          }
+        }
+      }
+    }
+  }
+}
