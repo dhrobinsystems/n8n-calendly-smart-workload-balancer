@@ -1,0 +1,58 @@
+[
+  {
+    "id": "REP_ID_01",
+    "name": "Rep One",
+    "email": "rep01@example.com",
+    "hubspotOwnerId": "1001",
+    "timezone": "America/New_York",
+    "regions": ["AMER"],
+    "weight": 1,
+    "maxActiveDeals": 40,
+    "workingHours": { "start": "09:00", "end": "17:00", "days": [1, 2, 3, 4, 5] },
+    "ptoCalendarId": "pto-rep01@calendar.example.com",
+    "calendarId": "rep01@example.com",
+    "active": true
+  },
+  {
+    "id": "REP_ID_02",
+    "name": "Rep Two",
+    "email": "rep02@example.com",
+    "hubspotOwnerId": "1002",
+    "timezone": "America/Los_Angeles",
+    "regions": ["AMER"],
+    "weight": 1,
+    "maxActiveDeals": 40,
+    "workingHours": { "start": "08:00", "end": "16:00", "days": [1, 2, 3, 4, 5] },
+    "ptoCalendarId": "pto-rep02@calendar.example.com",
+    "calendarId": "rep02@example.com",
+    "active": true
+  },
+  {
+    "id": "REP_ID_03",
+    "name": "Rep Three",
+    "email": "rep03@example.com",
+    "hubspotOwnerId": "1003",
+    "timezone": "Europe/London",
+    "regions": ["EMEA"],
+    "weight": 1.5,
+    "maxActiveDeals": 50,
+    "workingHours": { "start": "09:00", "end": "17:30", "days": [1, 2, 3, 4, 5] },
+    "ptoCalendarId": "pto-rep03@calendar.example.com",
+    "calendarId": "rep03@example.com",
+    "active": true
+  },
+  {
+    "id": "REP_ID_04",
+    "name": "Rep Four",
+    "email": "rep04@example.com",
+    "hubspotOwnerId": "1004",
+    "timezone": "Asia/Singapore",
+    "regions": ["APAC"],
+    "weight": 1,
+    "maxActiveDeals": 35,
+    "workingHours": { "start": "09:00", "end": "18:00", "days": [1, 2, 3, 4, 5] },
+    "ptoCalendarId": "pto-rep04@calendar.example.com",
+    "calendarId": "rep04@example.com",
+    "active": true
+  }
+]
